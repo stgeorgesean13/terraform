@@ -13,6 +13,7 @@ resource "google_compute_instance" "example" {
   name         = var.vm_names
   machine_type = "n1-standard-1"
   zone         = "us-east1-b"
+  count	       = 2
 
   boot_disk {
     initialize_params {
