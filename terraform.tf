@@ -4,8 +4,13 @@ provider "google" {
   region     = "us-east1"
 }
 
+variable "vm_names" {
+  type = list(string)
+  default = ["my-vm2"]
+}
+
 resource "google_compute_instance" "example" {
-  name         = "my-vm"
+  name         = var.vm_names
   machine_type = "n1-standard-1"
   zone         = "us-east1-b"
 
